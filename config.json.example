@@ -1,7 +1,7 @@
 {
 	"token": "BOT_TOKEN",
 	"channelRoleMap": {
-		"CHANNEL_ID1": "PINGED_ROLE_ID1",
-		"CHANNEL_ID2": "PINGED_ROLE_ID2"
+		"CHANNEL_ID1": ["PINGED_ROLE_ID1", "PINGED_ROLE_ID2"],
+		"CHANNEL_ID2": ["PINGED_ROLE_ID2"]
 	}
 }

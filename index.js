@@ -43,10 +43,11 @@ client.once(Events.ClientReady, readyClient => {
 });
 
 client.on('threadCreate', async thread => {
-	const role = channelRoleMap[thread.parentId];
-	if (role) {
+	const roles = channelRoleMap[thread.parentId];
+	if (roles) {
+		const roleMentions = roles.map(role => `<@&${role}>`).join(' ');
 		await thread.send({
-			content: `<@&${role}>`,
+			content: roleMentions,
 			flags: [4096]
 		});
 	}
