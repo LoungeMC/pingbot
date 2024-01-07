@@ -29,7 +29,7 @@ if (fs.existsSync('./node_modules/discord.js')) {
 
 
 // Require the necessary discord.js classes
-const { Client, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Events, GatewayIntentBits, MessageFlags, messageLink } = require('discord.js');
 const { token, channelRoleMap } = require('./config.json');
 
 // Create a new client instance
@@ -48,7 +48,7 @@ client.on('threadCreate', async thread => {
 		const roleMentions = roles.map(role => `<@&${role}>`).join(' ');
 		await thread.send({
 			content: roleMentions,
-			flags: [4096]
+			flags: [MessageFlags.SuppressNotifications]
 		});
 	}
 });
