@@ -1,0 +1,14 @@
+{
+  "name": "pingbot",
+  "version": "1.0.0",
+  "description": "Bot to fix our issue with discord tickets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DarkeFae",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  }
+}

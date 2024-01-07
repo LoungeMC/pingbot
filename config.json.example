@@ -1,0 +1,5 @@
+{
+	"token": "BOT_TOKEN",
+	"channels": ["CHANNEL_ID"],
+	"role": "PINGED_ROLE_ID"
+}
