@@ -28,12 +28,9 @@ if (fs.existsSync('./node_modules/discord.js')) {
 }
 
 
-
 // Require the necessary discord.js classes
 const { Client, Events, GatewayIntentBits } = require('discord.js');
-const { token, channels, role } = require('./config.json');
-
-
+const { token, channelRoleMap } = require('./config.json');
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
@@ -46,7 +43,8 @@ client.once(Events.ClientReady, readyClient => {
 });
 
 client.on('threadCreate', async thread => {
-	if (channels.includes(thread.parentId)) {
+	const role = channelRoleMap[thread.parentId];
+	if (role) {
 		await thread.send({
 			content: `<@&${role}>`,
 			flags: [4096]
