@@ -11,7 +11,6 @@ function InstallPackages() {
 		process.exit()
 	} catch (err) {
 		console.log('Error! ', err)
-		console.log('Support Server: https://discord.gg/zv6maQRah3')
 		process.exit()
 	}
 }
